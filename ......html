@@ -1,0 +1,29 @@
+<div class="clock">
+    <div id="time">00:00:00</div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+        height: 100vh; display: flex; align-items: center; justify-content: center;
+    }
+    .clock {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        padding: 40px 60px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    }
+    #time {
+        font-size: 4rem; color: white; font-family: 'Courier New', monospace;
+        letter-spacing: 5px; text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+</style>
+
+<script>
+    setInterval(() => {
+        const d = new Date();
+        document.getElementById('time').innerHTML = d.toLocaleTimeString();
+    }, 1000);
+</script>
